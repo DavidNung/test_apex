@@ -1,0 +1,10 @@
+//David Nung 10/09/2021 Best Practices (Business Logic should stand on separate class)
+trigger ContractEndDateAdapterTrigger on SBQQ__Subscription__c (after insert, after update) {
+   trigger AccountTrigger on Account (after insert, after update) {
+		if(Trigger.isAfter){
+			if(Trigger.isInsert || Trigger.isUpdate){
+				SubscriptionTriggerHandler.afterUpdateInsertHandler(Trigger.new);
+			}
+		}
+	}
+}
