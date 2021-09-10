@@ -1,0 +1,8 @@
+En ce qui concerne le point numéro 4 : Je ne suis pas sûr de bien comprendre, mais j’aurais :
+1.	Créer un visual Flow (on Create / Edit) 
+a.	Object = SBQQ__Subscription__c
+2.	GetRecord 
+3.	Décision 
+a.	(Si ComplianceProcess__c == "Conformité Pub" && Date.now() <= sub.EffectiveEndDate__c)  alors MissingInformations__c = champ défini pour Conformité pub. 
+b.	Sinon rien 
+4.	Update Record
